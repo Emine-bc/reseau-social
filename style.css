@@ -56,7 +56,7 @@ padding: 0.5rem 0;
 }
 
 .main{
-    height: 700px;
+    align-items:flex-start;
     padding-top: 2rem;
 }
 
@@ -373,9 +373,15 @@ color: rgba(0, 0,0, 0.7);
         flex-direction: column;
         height: auto;
     }
+    .main .body{
+        /* width: calc(100% + 4rem); */
+        width: 100%;
+         margin-left: 0rem;
+        margin-right: 0rem;
+    } 
     .main .sidebar-left{
         flex-flow: row wrap;
-        width: 90%;
+        width: 100%;
         justify-content: space-between;
         align-content: center;
     }
@@ -389,7 +395,10 @@ color: rgba(0, 0,0, 0.7);
         height: 78px;
     }
     .main .sidebar-right{
-        width: 92%;
+        width: 100%;
+    }
+    .main .sidebar-left a{
+    padding-left: 5.5rem;
     }
     .list-suggestion{
         display: flex;
