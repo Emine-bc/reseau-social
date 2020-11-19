@@ -18,285 +18,305 @@ progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=ra
 [type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
 details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
 /*# sourceMappingURL=normalize.min.css.map */
-/* GENERAL
-===================================================================*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
-*, *:before, *:after {
+
+/* GENERAL*/
+/*============================================================================================*/
+
+*{
+    margin:0;
+    padding:0;
     box-sizing: border-box;
-  }
-
-body{
-    background: #F1F1F1;
-    font-family: Roboto,Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 1rem;
-    color:rgba(0, 0, 0, 0.65);
-}
-/*HEADER SECTION
-===================================================================*/
-
-.container{
-    width: 100%;
-    height: 60px;
-    background:#2C3E50;
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-    position: fixed;
-    top:0;
-    z-index: 1;
     
 }
-.container .navbar-menu .nav{
-    list-style: none;
+html{
+    background-color: #F5F5F5;
+    font-family: Roboto,Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 0.6rem;
+    scroll-behavior: smooth;
 }
-.header-logo{
-    padding:10px 0;
-    padding-left: 4rem;
+/* CSS FOR HEADER*/
+/*=================================================================================================*/
+header{
+width: 100%;
+background-color: #2c3e50;
+height: auto;
+padding: 0.5rem 0;
 }
-.navbar-menu{
-    line-height: 2;
-    padding-right: 4rem;
-}
-.navbar-menu ul li{
-    float: left;
-    padding-left: 2rem;
-    margin:0;
-}
-.navbar-menu ul li a{
-    text-decoration: none;
-    color: rgba(255,255,255,0.67);
-    transition: color.3s;
-}
-
-.navbar-menu ul li a:hover,
-.navbar-menu ul li a:active{
-color:#FFF;
-}
-/* END HEADER SECTION
-===================================================================*/
-
-
-/*========================================================================================================================================*/
-
-
-/* START MAIN SECTION
-===================================================================*/
-.main{
-    padding:0 4rem;
-    width: 100%;
-    margin: 0px auto;
-    max-width: calc(100% - 8rem);
-    height: 480vh;
-    padding-top: 5rem;
-    padding-left: 0rem;
+.container{
     display: flex;
+    width: 80%;
+    margin: 0 auto;
     justify-content: space-between;
-}
-.navbar-menu .nav  .nav-item .image-profile::before{
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    width: 30px ;
-    height:30px ;
-    padding:2px;
-    border-radius: 50%;
-    background: url(images/matthew.jpg) center center / contain no-repeat;
-    margin-top: -4px;
-    margin-right: 6px;
+    align-items:center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    /* vertical-align: middle; */
+    
 }
 
-.sidebar{
-    font-size: 14px;
-    width: 200px;
-    flex:none;
-    position: fixed;
-    top:5rem;
-    z-index: 1;
+.main{
+    height: 700px;
+    padding-top: 2rem;
 }
-.aside{
-    width: 280px;
-    padding-right: 0px;
-    flex:none;
-    position: -webkit-sticky;
-    position: sticky;
-    background-color: black;
-    height: 0vh;
-    top: 5rem;
+
+.navbar-menu .nav{
+    list-style:none;
 }
-.body{
-    width: 100% ; 
-    margin-left:280px ;
-    margin-right: 40px;
+.navbar-menu .nav li{
+    float: left;
 }
-.main .sidebar a{
-    display: block;
+.navbar-menu ul li a {
     text-decoration: none;
-    padding: .6em 0rem;
-    opacity:0.7;
-    color:black;
+    padding: 0.8rem ;
+    color: #fbfbfb;
+}
+
+.navbar-menu ul li a:hover {
+    background-color:#377fdd;
+    border-radius: 2px;
+    transition: background-color .4s;
+    color: #dadde1;
+}
+/* body > header > div > nav{
+    background-color: red;
+}
+
+body > header > div{
+    background-color: green;
+} */
+
+.navbar-menu .nav .nav-item:first-child::before {
+    content:"";
+    display:inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* margin: -12px 4px -14px -46px; */
+    margin:-14px 5px -16px 0px;
+    background: url(images/matthew.jpg) center center / contain no-repeat;
+}
+/**
+body > header > div > nav > ul > li:nth-child(6) > img{
+    border-radius: 50%;
+    vertical-align: middle;
+    align-items: center;
+    margin:-13px 0px -18px 0px;
+}
+**/
+
+
+/* CSS FOR SIDEBAR-LEFT*/
+/*=================================================================================================*/
+
+.main .sidebar-left{
+    width: 160px;
+    height: 100%;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.main .sidebar-left a{
+    /* display: block; */
+    list-style: none;
+    color: black;
+    opacity: 0.7;
+    font-size: 1.4rem;
+    text-decoration: none;
     border: solid 1px transparent;
     padding-left: 5px;
     transition: .3s;
+    padding:  0.8rem 0;
 }
 
-.main .sidebar a.active:hover,
-.main .sidebar a:hover{
+.main .sidebar-left a.active:hover,
+.main .sidebar-left a:hover{
     color:black;
     opacity:1;
-    
     background: white;
     font-weight: 700;
     border-radius: 3px;
 }
 
-.main .sidebar a::before{
-content: "";
-display: inline-block;
-width: 16px;
-height: 16px;
-vertical-align: middle;
-background: url(images/home.svg) center center / contain no-repeat;
-margin-top: -2.9px;
-margin-right: 0.6rem;
-transition: opacity .3s;
+.main .sidebar-left a::before{
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+    background: url(images/home.svg) center center / contain no-repeat;
+    margin-top: -2.9px;
+    margin-right: 0.6rem;
+    transition: opacity .3s;
+    }
+
+    .main .sidebar-left a.sidebar-message::before{
+        background: url(images/messages.svg) center center / contain no-repeat;
+    }
+    .main .sidebar-left a.sidebar-evenements::before{
+        background: url(images/evenements.svg) center center / contain no-repeat;
+    }
+    .main .sidebar-left a.sidebar-amis::before{
+        background: url(images/groupes.svg) center center / contain no-repeat;
+    }
+    .main .sidebar-left a.sidebar-groupes::before{
+        background: url(images/groupes.svg) center center / contain no-repeat;
+    }
+    .main .sidebar-left a.sidebar-dashboard::before{
+        background: url(images/dashboard.svg) center center / contain no-repeat;
+    }
+
+
+/* CSS FOR BODY*/
+/*=================================================================================================*/
+
+.main .body{
+    
+    height: 100%;
+    width: calc(100% - 4rem);
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
-.main .sidebar a.sidebar-message::before{
-    background: url(images/messages.svg) center center / contain no-repeat;
+.card {
+    margin-bottom: 1.5rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+
+}
+.card-header{
+    padding:1rem;
+    padding-bottom: 2rem;
+    position:relative;
+    background:  white;
+    border-radius: 4px;
+}
+.card-header-avatar{
+    padding-left: 64px;
+}
+.card-title{
+    font-weight: bold;
+    color: black;
+    font-size: 1.8rem;
+    margin-bottom: 5px 0;
+}
+.card-time{
+    font-size: 1rem;
+    color: rgba(0, 0, 0, .4);
+    padding-top: .5rem;
 }
 
-.main .sidebar a.sidebar-evenements::before{
-    background: url(images/evenements.svg) center center / contain no-repeat;
+.card-avatar{
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
 }
-.main .sidebar a.sidebar-amis::before{
-    background: url(images/groupes.svg) center center / contain no-repeat;
-}
-.main .sidebar a.sidebar-groupes::before{
-    background: url(images/groupes.svg) center center / contain no-repeat;
-}
-.main .sidebar a.sidebar-dashboard::before{
-    background: url(images/dashboard.svg) center center / contain no-repeat;
-}
-/* END MAIN SECTION
-===================================================================*/
-p {
+.contenu-pub-text {
     text-align: justify;
     text-justify: inter-word;
-  }
-.aside .card-body .presentation{
-    margin-top: 0px;
-    margin-bottom: 1rem;
-}
-  .card{
-      border: solid 1px #dbdbdb;
-      background-color: white;
-      border-radius: 4px;
-      margin-bottom: 1.5rem;
-  }
-  .card-header{
-      padding:1rem;
-      position:relative;
+    font-size: 1.2rem;
+    opacity: .5;
+    padding: 1rem 1rem 0 1rem;
+    background: white;
   }
 
-  .card-header-avatar{
-      padding-left: 64px;
+.contenu-pub-text:last-child {
+  padding-bottom: 2rem;  
+  }
+
+  .pub-sans-image{
+      padding-top: 0rem;
   }
 
 
-
-  .card-title{
-      font-weight: bold;
-      color: black;
-      font-size: 18px;
-      margin-bottom: 5px 0;
-  }
-  .card-time{
-      font-size: 12px;
-      color: rgba(0, 0, 0, .4);
-      padding-top: .5rem;
+  .card-body{
+    background: white;
   }
 
-  .card-avatar{
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: 1rem;
-      transform: translateY(-50%);
-  }
-  
-  .card-body p:first-child {
-    margin-bottom: 0;
-    padding-top: 0;
-}
-
-  .card-body p:last-child {
-      margin-bottom: 0;
-  }
-  .card-body p{
-      padding: 0rem 1rem;
-  }
   .card-body .fullwidh{
     display:block;
      width:100%; 
   }
+
+  /* css for card footer */
   .card-footer{
-      border-top: solid 1px #dbdbdb;
-      background: #fbfbfb;
-      display: flex;
-      padding: 0rem 1rem;
-      font-size: 12px;
-      /* justify-content: space-between; */
-  }
-  .card-footer a{
-      text-decoration: none;
-      color: rgba(0, 0, 0, .4);
-      padding: 8px;
-  }
+    border-top: solid 1px #dbdbdb;
+    background: #fbfbfb;
+    display: flex;
+    padding:  .8rem;
+    font-size: 1.4rem;
+}
+.card-footer a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, .4);
+}
+.card-footer a:hover{
+    text-decoration: underline;
+}
 
-  .card-like{
-      margin-top: 2px;
-  }
-  .card-footer a:hover{
-      text-decoration: underline;
-  }
-
-
-  .card-like::before,
+.card-comments{
+    margin-left: auto;
+    vertical-align: middle;
+    padding-top:2px ;
+}
+.card-like{
+    padding-top:2px ;
+    vertical-align: middle;
+    margin-bottom:0 ;
+}
+.card-like::before,
   .card-comments::before{
       content: "";
       display: inline-block;
-      width: 18px;
-      height: 18px;
+      width: 1rem;
+      height: 1rem;
       vertical-align: middle;
       margin-right: 2px;
       background: url(images/jaime.svg) center center / contain no-repeat;
   }
-  .card-comments{
-      margin-left: auto;
-  }
-
   .card-comments::before{
     background: url(images/comntr.svg) center center / contain no-repeat;
   }
+  .card-like::before{
+    margin-top: -4px;
+  }
+  
 
+/* CSS FOR SIDEBAR-RIGHT*/
+/*=================================================================================================*/
+
+.main .sidebar-right{
+    height: 100%;
+    width: 245px;
+    flex: none;
+}
+
+/* css for bar suggestion*/
 .sidebar-suggestion {
     color: black;
     font-size: 15px;
     font-weight: 700;
-    margin-top: 1rem;
+    margin-top: 3rem;
+    opacity: 0.6;
 }
 .sidebar-suggestion::after {
 content:"";
 display: block;
 height: 1px;
 background: black;
+opacity: 0.7;
 margin: 1rem 0rem;
 width: 100%;
 }
+/* css for bar suggestion*/
+
 .friend{
     margin: 1rem 0;
     display: flex;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
 }
 .friend-profile{
     margin-right: 1rem;
@@ -331,13 +351,54 @@ vertical-align: middle;
     padding-top: 0.3rem;
     color:rgba(0, 0,0, 0.5);
 }
-button{
-    padding: 0.4rem 0.9rem;
+.ajouter,.supprimer {
+    padding: 0.6rem 1rem;
     background-color: #1877f2;
     border-radius: 4px;
     border:none;
+    color: white;
+    text-decoration: none;
 }
 .supprimer {
 background-color:#dadde1;
-margin-left: .2rem;
+margin-left: 0.6rem;
+color: rgba(0, 0,0, 0.7);
 }
+
+
+
+
+@media only screen and (max-width: 780px) {
+    .container{
+        flex-direction: column;
+        height: auto;
+    }
+    .main .sidebar-left{
+        flex-flow: row wrap;
+        width: 90%;
+        justify-content: space-between;
+        align-content: center;
+    }
+    .main .sidebar-left a{
+        flex: 1 0 auto;
+        margin-right: 0.01rem;
+        display: block;
+        width: 25%;
+    }
+    header{
+        height: 78px;
+    }
+    .main .sidebar-right{
+        width: 92%;
+    }
+    .list-suggestion{
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .friend-requests{
+        width: 50%;
+    }
+    .friend{
+        padding-left: 2.5rem;
+    }
+  }
